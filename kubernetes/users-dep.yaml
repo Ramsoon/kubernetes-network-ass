@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users
+          image: successtech/k8-network-user
+          env:
+            - name: AUTH_ADDRESS
+              value: "auth-service.default" #this DNS depends on your namespace
+              #value: localhost # localhost wont work,apply the auth-service.yaml and do a get service to see the correct ip address to replace localhost 
+

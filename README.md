@@ -1,2 +1,2 @@
-# kubernetes-network-ass
-This task explore several options of communications between pods. there are three pods which one containers each
+# k8-network
+Exploring Kubernetes network communication between pods, Containers and Clusters
